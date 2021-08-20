@@ -1,5 +1,5 @@
 import { RequestHandler } from './endpoint';
-import { Headers, Location, ParameterizedBody, RawBody } from './helper';
+import { Location, ParameterizedBody, RawBody, RequestHeaders } from './helper';
 import {
 	ExternalFetch,
 	GetSession,
@@ -14,7 +14,7 @@ type PageId = string;
 
 export interface Incoming extends Omit<Location, 'params'> {
 	method: string;
-	headers: Headers;
+	headers: RequestHeaders;
 	rawBody: RawBody;
 	body?: ParameterizedBody;
 }

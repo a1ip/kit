@@ -13,11 +13,10 @@ export type ParameterizedBody<Body = unknown> = Body extends FormData
 	? ReadOnlyFormData
 	: (string | RawBody | ReadOnlyFormData) & Body;
 
-// TODO we want to differentiate between request headers, which
-// always follow this type, and response headers, in which
-// 'set-cookie' is a `string[]` (or at least `string | string[]`)
-// but this can't happen until TypeScript 4.3
-export type Headers = Record<string, string>;
+export type RequestHeaders = Record<string, string>;
+
+/** Only value that can be an array is set-cookie. For everything else we assume string value */
+export type ResponseHeaders = Record<string, string | string[]>;
 
 export type Location<Params extends Record<string, string> = Record<string, string>> = {
 	host: string;
