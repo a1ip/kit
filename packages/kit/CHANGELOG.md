@@ -1,5 +1,11 @@
 # @sveltejs/kit
 
+## 1.0.0-next.156
+
+### Patch Changes
+
+- Exclude emitted declarations on packaging ([#2247](https://github.com/sveltejs/kit/pull/2247))
+
 ## 1.0.0-next.155
 
 ### Patch Changes
